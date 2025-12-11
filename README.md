@@ -4,7 +4,7 @@
 
 *A curated collection of foundational papers tracing the evolution from early generative models to modern retrieval-augmented language systems*
 
-[![Papers](https://img.shields.io/badge/papers-13-blue.svg)](#-the-papers)
+[![Papers](https://img.shields.io/badge/papers-14-blue.svg)](#-the-papers)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
@@ -12,7 +12,7 @@
 
 ## 📖 Overview
 
-This repository presents a carefully structured reading path through 13 landmark papers that tell the story of modern deep learning. Starting with Generative Adversarial Networks and culminating in efficient Retrieval-Augmented Generation systems, this collection shows how each breakthrough built upon the previous one to shape today's AI landscape.
+This repository presents a carefully structured reading path through 14 landmark papers that tell the story of modern deep learning. Starting with Generative Adversarial Networks and culminating in efficient Retrieval-Augmented Generation systems, this collection shows how each breakthrough built upon the previous one to shape today's AI landscape.
 
 ## 🎯 Why This Sequence?
 
@@ -169,7 +169,18 @@ Combined neural retrieval with generation to ground language models in external 
 
 ---
 
-#### 13. [LightRAG: Simple and Fast Retrieval-Augmented Generation](https://huggingface.co/papers/2410.05779)
+#### 13. [Retrieval-Augmented Generation for Large Language Models: A Survey](https://arxiv.org/abs/2312.10997)
+**Gao et al., 2023**
+
+A comprehensive survey of RAG techniques, frameworks, and applications. Provides systematic taxonomy of retrieval methods, generation strategies, and evaluation approaches for RAG systems.
+
+> *Key Innovation*: Unified framework for understanding RAG architectures, from naive RAG to advanced RAG and modular RAG
+
+**[📄 Read Paper](https://arxiv.org/abs/2312.10997)**
+
+---
+
+#### 14. [LightRAG: Simple and Fast Retrieval-Augmented Generation](https://huggingface.co/papers/2410.05779)
 **Recent Work, 2024**
 
 Streamlined RAG architecture focused on speed and simplicity. Represents the current direction toward efficient, production-ready knowledge-augmented systems.
@@ -200,7 +211,8 @@ Streamlined RAG architecture focused on speed and simplicity. Represents the cur
 2024  Mixtral ───────┘
 
 2020  RAG ───────────┐
-2024  LightRAG ──────┘──> Knowledge Integration
+2023  RAG Survey ────┤──> Knowledge Integration
+2024  LightRAG ──────┘
 ```
 
 ## 📊 Quick Reference Table
@@ -214,23 +226,41 @@ Streamlined RAG architecture focused on speed and simplicity. Represents the cur
 | 5 | [RoBERTa](https://arxiv.org/abs/1907.11692) | 2019 | Pretraining | Optimized training |
 | 6 | [ViT](https://arxiv.org/abs/2010.11929) | 2020 | Vision | Transformers for images |
 | 7 | [DDPM](https://arxiv.org/abs/2502.09992) | 2020 | Generative | Diffusion models |
-| 8 | [LLM Survey](https://arxiv.org/abs/2402.06196) | 2023 | Survey | Comprehensive overview |
+| 8 | [LLM Survey](https://arxiv.org/abs/2402.06196) | 2023 | Survey | Comprehensive LLM overview |
 | 9 | [LLaMA](https://arxiv.org/abs/2302.13971) | 2023 | LLM | Efficient open models |
 | 10 | [Mixtral](https://arxiv.org/abs/2401.04088) | 2024 | LLM | Mixture of experts |
 | 11 | [LoRA](https://arxiv.org/abs/2106.09685) | 2021 | Fine-tuning | Parameter efficiency |
 | 12 | [RAG](https://arxiv.org/abs/2005.11401) | 2020 | Retrieval | Knowledge integration |
-| 13 | [LightRAG](https://huggingface.co/papers/2410.05779) | 2024 | Retrieval | Fast RAG systems |
+| 13 | [RAG Survey](https://arxiv.org/abs/2312.10997) | 2023 | Survey | RAG taxonomy & methods |
+| 14 | [LightRAG](https://huggingface.co/papers/2410.05779) | 2024 | Retrieval | Fast RAG systems |
 
 ## 🎓 How to Use This Repository
 
 ### For Students
 Start from paper 1 and work sequentially. Each paper builds on concepts from previous ones. Take notes on how ideas evolve and connect.
 
+**Suggested Reading Path:**
+1. **Foundations** (Papers 1-2): Understand generative modeling basics
+2. **Core Architecture** (Papers 3-6): Master the Transformer and its applications
+3. **Modern Techniques** (Papers 7-11): Learn about scaling and efficiency
+4. **Knowledge Integration** (Papers 12-14): Explore how to combine LLMs with external knowledge
+
 ### For Researchers
 Use this as a reference for understanding how current techniques emerged. Jump to specific sections based on your interests, but review the foundational papers if unfamiliar.
 
+**Research Focus Areas:**
+- **Generative AI**: Papers 1, 2, 7
+- **Transformer Architecture**: Papers 3, 4, 5, 6
+- **LLM Development**: Papers 8, 9, 10, 11
+- **RAG Systems**: Papers 12, 13, 14
+
 ### For Practitioners
-Focus on papers 8-13 for practical modern techniques, but skim papers 3-6 to understand the architectural foundations you're building on.
+Focus on papers 8-14 for practical modern techniques, but skim papers 3-6 to understand the architectural foundations you're building on.
+
+**Implementation Priority:**
+1. Paper 11 (LoRA) - For fine-tuning existing models
+2. Papers 12-14 (RAG) - For building knowledge-grounded applications
+3. Paper 10 (Mixtral) - For understanding efficient scaling
 
 ## 💡 Key Themes Across Papers
 
@@ -239,31 +269,66 @@ Focus on papers 8-13 for practical modern techniques, but skim papers 3-6 to und
 - **Efficiency is crucial**: Methods like LoRA and Mixtral make large models practical
 - **External knowledge helps**: RAG systems reduce hallucinations and improve factuality
 - **Simple ideas compound**: Each paper adds relatively simple innovations that combine powerfully
+- **From theory to practice**: Evolution from foundational concepts to production-ready systems
 
-## 🛠️ Suggested Projects
+## 🔄 How Papers Connect
 
-After reading these papers, consider implementing:
-
-1. **Miniature versions** of key architectures (small Transformer, simple VAE)
-2. **Comparison studies** between techniques (GAN vs Diffusion for a specific task)
-3. **Hybrid systems** combining ideas (LoRA-finetuned model with RAG)
-4. **Efficiency experiments** measuring the tradeoffs between model size and performance
+```
+GANs + VAEs → Generative Modeling Foundation
+                    ↓
+            Transformers → Revolutionary Architecture
+                    ↓
+        BERT + RoBERTa → Pretraining Paradigm
+                    ↓
+              ViT → Cross-Modal Extension
+                    ↓
+        LLaMA + Mixtral → Efficient Scaling
+                    ↓
+             LoRA → Adaptation Layer
+                    ↓
+    RAG + RAG Survey → Knowledge Integration
+                    ↓
+           LightRAG → Production Systems
+```
 
 ## 📖 Additional Resources
 
+### Interactive Learning
 - [The Illustrated Transformer](http://jalammar.github.io/illustrated-transformer/) - Visual guide to understanding Transformers
+- [The Annotated Transformer](http://nlp.seas.harvard.edu/annotated-transformer/) - Line-by-line implementation with explanations
+- [Transformer Explainer](https://poloclub.github.io/transformer-explainer/) - Interactive visualization
+
+### Courses & Tutorials
 - [Hugging Face Course](https://huggingface.co/course) - Practical NLP with Transformers
 - [Andrej Karpathy's Neural Networks: Zero to Hero](https://karpathy.ai/zero-to-hero.html) - Build neural networks from scratch
+- [Fast.ai Deep Learning Course](https://course.fast.ai/) - Practical deep learning
+
+### Code & Implementation
 - [Papers With Code](https://paperswithcode.com/) - Papers with implementation code
-- [Distill.pub](https://distill.pub/) - Clear explanations of machine learning concepts
+- [Hugging Face Transformers](https://github.com/huggingface/transformers) - State-of-the-art NLP models
+- [PyTorch Examples](https://github.com/pytorch/examples) - Official PyTorch examples
+
+### Conceptual Understanding
+- [Distill.pub](https://distill.pub/) - Clear explanations of ML concepts
+- [Lil'Log](https://lilianweng.github.io/) - Deep dives into ML topics
+- [Sebastian Ruder's Blog](https://www.ruder.io/) - NLP research insights
 
 ## 🗂️ Repository Structure
 
 ```
 .
 ├── papers/              # PDF copies of papers (add your own)
+│   ├── generative/      # GANs, VAEs, Diffusion
+│   ├── transformers/    # Attention, BERT, RoBERTa, ViT
+│   ├── llms/           # LLaMA, Mixtral, Surveys
+│   └── rag/            # RAG papers
 ├── notes/              # Reading notes and summaries
-├── implementations/    # Code implementations of key concepts
+│   ├── paper-summaries/
+│   └── concept-maps/
+├── implementations/    # Code implementations
+│   ├── transformers/
+│   ├── lora/
+│   └── rag/
 ├── visuals/           # Diagrams and visualizations
 └── README.md          # This file
 ```
@@ -273,10 +338,12 @@ After reading these papers, consider implementing:
 Found a broken link? Have suggestions for additional papers that fit this narrative? Open an issue or submit a pull request!
 
 **Contribution ideas:**
-- Add reading notes or summaries
-- Create visualizations of key concepts
-- Implement simplified versions of the models
-- Suggest related papers that fit the progression
+- ✍️ Add reading notes or summaries
+- 🎨 Create visualizations of key concepts
+- 💻 Implement simplified versions of the models
+- 📚 Suggest related papers that fit the progression
+- 🔧 Add practical implementation guides
+- 📝 Write tutorials connecting multiple papers
 
 ## 📄 License
 
@@ -286,6 +353,12 @@ This repository is MIT licensed. Note that individual papers are copyrighted by 
 
 Thanks to all the researchers whose groundbreaking work made this collection possible, and to the broader ML community for open research and knowledge sharing.
 
+**Special thanks to:**
+- The authors of all papers featured in this collection
+- The open-source community for making implementations accessible
+- ArXiv and Hugging Face for hosting research papers
+- All contributors to this repository
+
 ---
 
 <div align="center">
@@ -294,6 +367,6 @@ Thanks to all the researchers whose groundbreaking work made this collection pos
 
 Made with ❤️ for the ML community
 
-*Last updated: December 2025*
+*Last updated: December 2024*
 
 </div>
