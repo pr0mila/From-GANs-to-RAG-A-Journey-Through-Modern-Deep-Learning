@@ -367,6 +367,6 @@ Thanks to all the researchers whose groundbreaking work made this collection pos
 
 Made with ❤️ for the ML community
 
-*Last updated: December 2024*
+*Last updated: December 2025*
 
 </div>
